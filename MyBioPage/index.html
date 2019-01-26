@@ -7,6 +7,7 @@
       * {
         margin: 0px;
         padding: 0px;
+        position: relative;
       }
       html, body {
         height: 100vh;
@@ -18,8 +19,23 @@
       p {
         margin: 10px 0px;
       }
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .box-shadow {
+        -webkit-box-shadow: inset 0px 2px 20px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset 0px 2px 20px 0px rgba(0,0,0,0.75);
+        box-shadow: inset 0px 2px 20px 0px rgba(0,0,0,0.75);
+      }
+      .grow {
+        transition: all .2s ease-in-out;
+      }
+      .grow:hover {
+        transform: scale(1.1);
+      }
       .main-header, .main-footer {
-        height: 75px;
+        height: 70px;
         width: 100vw;
         background-color: #CCC;
       }
@@ -47,13 +63,15 @@
       }
       .bottom-section {
         width: 100%;
-        height: 100%;
-        background-color: green;
+        height: 68%;
+        background-color: #f1f1f1;
+        margin-bottom: 10px;
       }
       .sidebar {
         width: 25%;
         background-color: #ccc;
         height: 100%;
+        float: left;
       }
       .sidebar > ul {
         list-style-type: none;
@@ -63,6 +81,31 @@
         display: block;
         background-color: #ccc;
         border: 1px solid #f1f1f1;
+        transition-duration: 0.5s;
+      }
+      .sidebar > ul > li a:hover {
+        background-color: rgb(231, 244, 248);
+      }
+      .gallery {
+        height: 100%;
+        margin-left: 25%;
+        padding: 0 1em;
+        overflow: auto;
+      }
+      .gallery-container {
+        list-style-type: none;
+        text-align: center;
+      }
+      .gallery-container > li {
+        display: inline-block;
+        margin: 10px;
+      }
+      .gallery-container > li > img {
+        width: 136px;
+        height: 136px;
+        object-fit: cover;
+        margin: 10px;
+        background-color: #ffffff;
       }
       .pic-container {
         height: 100%;
@@ -84,7 +127,7 @@
   </head>
 
   <body>
-    <header class="main-header">
+    <header class="main-header box-shadow">
       <span class="logo-text">
         Corey Palmer
       </span>
@@ -96,15 +139,17 @@
             <img class="bio-image" src="./img/default-avatar.jpg" alt="my pic">
           </div>
           <div class="bio-description">
-            <h2>What is Lorem Ipsum?</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a type specimen
-              book. It has survived not only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchanged. It was popularised in the 1960s
-              with the release of Letraset sheets containing Lorem Ipsum passages, and more
-              recently with desktop publishing software like Aldus PageMaker including
-              versions of Lorem Ipsum.</p>
+            <h2>Biography</h2>
+            <p>My name is Corey Palmer. I am a senior attending California State
+            University, Fresno completing my degree in Business Administration,
+            Computer Information Systems. I love working with anything electronic,
+            especially computers. I have always had a passion for fixing things that area
+            broken. I also love to watch, and play, sports. Some of my favorite teams include
+            the Patriots, Reds, Kings, Lakers, and Liverpool FC. I am also an avid watch
+            enthusiast and collector. My goal is to graduate from Fresno State by the end of
+            2019 and start my career in the field of technology. I am not really sure exactly
+            what I want to do. The only thing I do know is that I will be working with computers
+            one way or another.</p>
           </div>
         </div>
       </div>
@@ -112,25 +157,51 @@
         <aside class="sidebar">
           <ul class="list">
             <li>
-              <a href="#">Link 1</a>
+              <a href="https://google.com" target="_blank">Google</a>
             </li>
             <li>
-              <a href="#">Link 1</a>
+              <a href="https://yahoo.com" target="_blank">Yahoo</a>
             </li>
             <li>
-              <a href="#">Link 1</a>
+              <a href="https://espn.com" target="_blank">ESPN</a>
             </li>
             <li>
-              <a href="#">Link 1</a>
+              <a href="https://blackboard.learn.fresnostate.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_12_1" target="_blank">BlackBoard</a>
             </li>
           </ul>
         </aside>
         <div class="gallery">
           <h2>Gallery</h2>
+          <ul class="gallery-container">
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/patriots.jpg" alt="patriots">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/reds.png" alt="reds">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/lakers.png" alt="lakers">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/kings.png" alt="kings">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/fresnostate.png" alt="fresnostate">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/liverpool.png" alt="liverpool">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/computer.jpg" alt="computer">
+            </li>
+            <li class="gallery-item box-shadow grow">
+              <img src="./img/royaloak.jpg" alt="royaloak">
+            </li>
+          </ul>
         </div>
       </div>
     </section>
-    <footer class="main-footer">
+    <footer class="main-footer box-shadow">
       <span class="footer-text">Copyright (C) 2019. Created by Corey Palmer</span>
     </footer>
   </body>
